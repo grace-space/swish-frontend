@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Jost:normal,bold,italic,bolditalic&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 :root {
   --text-color: #000000;
@@ -9,10 +10,11 @@
   --foot-color: #323232;
 
   font-family: "Jost", sans-serif;
+  scroll-behavior: smooth;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 body {
@@ -24,14 +26,6 @@ body {
 }
 
 .site-section {
-  display: grid;
-  grid-template-columns: 1;
-  grid-template-rows: 120px 100% 1fr 75px;
-  grid-template-areas:
-    "nav"
-    "header"
-    "main"
-    "footer";
   width: 100%;
   color: var(--text-color);
   height: 3100px;
@@ -55,7 +49,18 @@ nav {
   gap: 25px;
 }
 
-nav a {
+#navlogo:hover {
+    filter: grayscale(1);
+}
+
+.nav-list {
+  display: flex;
+  text-align: center;
+  list-style: none;
+  gap: 50px;
+}
+
+.nav-list a {
   font-style: normal;
   text-transform: uppercase;
   font-weight: 400;
@@ -65,13 +70,25 @@ nav a {
   text-align: center;
   letter-spacing: 0.1em;
   color: #000000;
+  position: relative;
 }
 
-.nav-list {
-  display: flex;
-  text-align: center;
-  list-style: none;
-  gap: 50px;
+.nav-list a:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--action-color);
+  transform-origin: bottom right;
+  transition: transform 0.20s ease-out;
+}
+
+.nav-list a:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 #user-button {
@@ -94,5 +111,45 @@ nav a {
   color: #ffffff;
 }
 
+#user-button:hover {
+    background-color: var(--action-color);
+}
 
+main {
+  grid-area: main;
+  background-color: var(--bg-color);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
 
+footer {
+  grid-area: footer;
+  background: var(--foot-color);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+}
+
+footer p {
+  color: #dcdcdc;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+footer a {
+  color: #dcdcdc;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  text-decoration: none;
+}
