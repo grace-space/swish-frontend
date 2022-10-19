@@ -13,6 +13,11 @@
   scroll-behavior: smooth;
 }
 
+::placeholder {
+  color: #8C8C8C;
+  opacity: 1;
+}
+
 a {
   text-decoration: none;
 }
@@ -28,7 +33,6 @@ body {
 .site-section {
   width: 100%;
   color: var(--text-color);
-  height: 3100px;
 }
 
 nav {
