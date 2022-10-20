@@ -1,17 +1,13 @@
-#profile-link {
 
-    background-color: orange;
-    width: 492px;
-    height: 70px;
 
-  }
   
-  #library-link {
+main {
     display: flex;
     justify-content: center;
     align-content: center;
 
     vertical-align: middle;
-    line-height: 0;
+    height: 100vh;
+    background-color: yellow;
   }
   
